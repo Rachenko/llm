@@ -64,3 +64,4 @@ python 03_chat_with_history.py   # แชทวนลูป เห็นว่�
 | สคริปต์บอก connection refused | Ollama ไม่ได้รัน — พิมพ์ `ollama serve` ค้างไว้ใน terminal อีกอัน |
 | โมเดลตอบช้า | เครื่องไม่มี GPU จะช้าหน่อย ปกติ รอได้; ถ้าช้ามากเปลี่ยนเป็น `qwen2.5:1.5b` (เล็กลง) โดยแก้ `MODEL_NAME` ในสคริปต์ |
 | `pip install` error สีแดง | ลอง `python -m pip install -r requirements.txt` |
+| `UnicodeEncodeError` ตอน print ภาษาไทย | Python บน Windows ใช้ cp1252 — สคริปต์ใน repo นี้แก้ให้แล้ว; ถ้าเขียนเองใส่ `sys.stdout.reconfigure(encoding="utf-8")` หรือรัน `python -X utf8` |

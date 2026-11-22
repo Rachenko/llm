@@ -7,7 +7,13 @@
 รัน: python 02_ollama_package.py
 """
 
+import sys
+
 import ollama
+
+# Windows: stdout เป็น cp1252 ทำให้ print ภาษาไทยพัง บังคับ UTF-8 ไว้เลย
+if sys.platform == "win32":
+    sys.stdout.reconfigure(encoding="utf-8")
 
 MODEL_NAME = "qwen2.5:3b"
 

@@ -8,7 +8,14 @@
 รัน: python 03_chat_with_history.py  (พิมพ์ exit เพื่อออก)
 """
 
+import sys
+
 import ollama
+
+# Windows: stdout/stdin เป็น cp1252 ทำให้ print/input ภาษาไทยพัง บังคับ UTF-8 ไว้เลย
+if sys.platform == "win32":
+    sys.stdout.reconfigure(encoding="utf-8")
+    sys.stdin.reconfigure(encoding="utf-8")
 
 MODEL_NAME = "qwen2.5:3b"
 

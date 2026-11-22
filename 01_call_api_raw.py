@@ -8,7 +8,12 @@
 """
 
 import json
+import sys
 import urllib.request
+
+# Windows: stdout เป็น cp1252 ทำให้ print ภาษาไทยพัง บังคับ UTF-8 ไว้เลย
+if sys.platform == "win32":
+    sys.stdout.reconfigure(encoding="utf-8")
 
 OLLAMA_URL = "http://localhost:11434/api/generate"
 MODEL_NAME = "qwen2.5:3b"
